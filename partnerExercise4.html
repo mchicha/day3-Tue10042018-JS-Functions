@@ -1,0 +1,49 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <title>convert kilos to pounds and pounds to kilos</title>
+       
+    </head>
+    <body>
+        
+        <script type="text/javascript">
+            var convertWeight = function (number, unit) {
+            var weight = 0;    
+            var unitToConvert = "";
+            // 1 kilo = 2.20462 pounds
+            // 1 pound = 0.453592 kilos
+            if (typeof(number) != "number") 
+            {
+                console.log("the function receives an incorrect parameter.");
+                return;
+            }
+            if (typeof(unit)!= "string")
+            {
+                 console.log("the function receives an incorrect parameter.");
+                return;
+            }
+            
+            if (unit == "kilos") 
+            {
+                weight = (number*2.20462);
+                unitToConvert = "pounds";
+            }
+            if (unit == "pounds") 
+            {
+                weight = (number*0.453592);
+                unitToConvert = "kilos";
+            }
+                
+            console.log(number + " " + unit + " equals to " + weight + " " + unitToConvert);
+            }
+            convertWeight("kilos", 1);
+            convertWeight(100, "kilos"); // should be about 220.462
+            convertWeight(100, "pounds"); // should be about 45.3592
+           
+        </script>
+       
+    </body>
+</html>

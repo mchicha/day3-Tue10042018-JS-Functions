@@ -1,0 +1,85 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <title>Invoking Functions</title>
+       
+    </head>
+    <body>
+        
+        <script type="text/javascript">
+            var shout = function () {
+            console.log("HEY MAN!");
+            }
+
+            var whisper = function () {
+            console.log("umm.. excuse me. Hello");
+            }
+
+            shout();
+            
+            var greet = function (name) {
+                console.log("hello " + name);
+            }
+            
+            greet("John");
+            //or
+            greet("Paul");
+            //or even
+            greet("Ringo and that other one, sorry George");
+            
+            var greet = function (names) {
+                for (var i = 0; i < names.length; i++) {
+                    console.log("hello " + names[i]);
+                }
+            }
+
+            var names = ["Jim", "Bob", 'Sue'];
+
+            //this invocation
+            greet(["Jim", "Bob", 'Sue']);
+            //does the same as this
+            greet(names);
+            
+            var array1 = [1, 2, 3];
+            var array2 = array1;
+            console.log(array1);
+            console.log(array2);
+            array2.push(4);
+            // What is the value of array2? What is the value of array1?
+            // Both arrays are now [1, 2, 3, 4] because a array variable holds a reference to the location
+            // of the array in memory. The assignment var array2 = array1; sets both variables equal to the same
+            // memory reference, and therefore the same value of array!
+            console.log(array1);
+            console.log(array2);
+            
+            var myNumber = 1;
+
+            function addOne(number){
+                number += 1;
+            }
+
+            addOne(myNumber);
+
+            console.log(myNumber); //what is myNumber? It's still 1!
+            /*
+            Primitive arguments, such as strings number and booleans are passed by to a function by value.
+            They are not modified by the function.
+            Array and Objects (reference types) are modified!!!
+            */
+            
+            var myArray = [1,2,3];
+
+            function addOneToElement(array){
+                array[0] = array[0] + 1;
+            }
+
+            addOneToElement(myArray);
+            console.log(myArray); // what is myArray? The first element has changed and it's now [2, 2, 3].
+            
+        </script>
+       
+    </body>
+</html>
